@@ -12,6 +12,24 @@
         @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
         .member-card:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: #800000; }
         p.text-gray-500.text-xs.uppercase { text-transform: none; word-break: break-all; white-space: normal; }
+        .council-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .council-grid > .bg-white {
+            flex: 1 1 min(260px, 100%);
+            max-width: 280px;
+        }
+        p.text-gray-500.text-xs, .council-grid h5, .council-grid p {
+            white-space: normal;
+            word-break: break-word;
+        }
+        .council-grid p.text-gray-500.text-xs.uppercase a,
+        .council-grid p.text-gray-500.text-xs.uppercase {
+            white-space: normal;
+        }
     </style>
 </head>
 <body class="bg-slate-50 font-serif text-gray-900 leading-normal">
@@ -27,13 +45,13 @@
                 </div>
             </div>
             <div class="mt-4 md:mt-0">
-                <a href="https://lumsc.gt.tc" target="_blank" class="bg-red-900 text-white px-6 py-2 rounded shadow-md font-bold hover:bg-black transition border-2 border-yellow-500">Grievance Portal →</a>
+                <a href="https://lumsc.gt.tc" target="_blank" class="bg-red-900 text-white px-6 py-2 rounded shadow-md font-bold hover:bg-black transition border-2 border-yellow-500">Grievance & Suggestion Portal →</a>
             </div>
         </div>
     </header>
 
     <div class="marquee py-2 font-bold text-sm uppercase shadow-inner border-b border-yellow-600">
-        <span> Welcome to the portal of the Meritorious Student Council. | Updates: MSC Grievance Portal is live at lumsc.gt.tc </span>
+        <span> Welcome to the portal of the Meritorious Student Council. | Updates: MSC Grievance & Suggestion Portal is live at lumsc.gt.tc </span>
     </div>
 
     <main class="container mx-auto px-4 py-10">
@@ -106,7 +124,7 @@
 
         <section class="mb-16">
             <h3 class="text-center text-2xl font-bold text-red-900 mb-10 uppercase tracking-wider">Council Representatives</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div class="council-grid">
                 <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
                     <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
                         <img src="images/vanshika-singh-chauhan.jpeg" alt="General Secretary" class="w-full h-full object-cover">
@@ -287,7 +305,7 @@
 
         <div class="mt-20 bg-red-900 rounded-2xl p-1 shadow-2xl">
             <div class="bg-white rounded-xl p-8 text-center border-4 border-dashed border-red-900">
-                <h3 class="text-3xl font-black text-red-900 mb-2">ACCESS GRIEVANCE PORTAL</h3>
+                <h3 class="text-3xl font-black text-red-900 mb-2">ACCESS Grievance & Suggestion Portal</h3>
                 <p class="text-gray-600 mb-6 font-bold uppercase tracking-tighter">Official Domain: LUMSC.GT.TC</p>
                 <a href="https://lumsc.gt.tc" target="_blank" class="inline-block bg-yellow-500 text-red-900 px-12 py-4 rounded-full font-black text-2xl hover:scale-105 transition shadow-lg">LAUNCH NOW</a>
             </div>
@@ -297,7 +315,7 @@
 
     <footer class="lu-red text-white py-12 border-t-8 border-yellow-500">
         <div class="container mx-auto text-center px-4">
-            <img src="images/lu-logo.png" class="h-16 mx-auto mb-4 brightness-0 invert">
+            <img src="images/lu-logo.png" class="h-16 mx-auto mb-4">
             <p class="font-bold text-xl uppercase tracking-widest">Meritorious Student Council</p>
             <p class="text-sm opacity-80 mt-2">University of Lucknow, Lucknow - 226007</p>
             <div class="mt-6 pt-6 border-t border-red-800 text-xs opacity-60">

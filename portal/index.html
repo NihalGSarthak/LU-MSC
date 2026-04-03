@@ -3,177 +3,209 @@
 <head>
   <base target="_top">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --primary: #1a73e8; --bg: #f8f9fa; --error: #d93025; --success: #1e8e3e; --lu-gold: #b38b00; }
-    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; margin: 0; }
-    
-    /* Main Portal Container */
-    .card { background: white; width: 100%; max-width: 600px; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 10px solid var(--primary); }
-    
-    /* New Heading Styles */
-    .portal-header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
-    .lu-title { color: var(--lu-gold); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
-    .msc-subtitle { color: #555; font-weight: 600; font-size: 1rem; margin: 5px 0; }
-    .portal-name { color: var(--primary); font-weight: 700; font-size: 1.4rem; margin: 5px 0; }
-
-    .screen { display: none; }
-    .active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    
-    h2 { color: var(--primary); margin: 0 0 10px 0; font-size: 1.5rem; }
-    .disclaimer { background: #e8f0fe; color: #1967d2; padding: 12px; border-radius: 8px; font-size: 13px; margin-bottom: 20px; border-left: 4px solid var(--primary); }
-    
-    label { display: block; margin-top: 15px; font-weight: 600; font-size: 13px; color: #555; }
-    input, select, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #dadce0; border-radius: 6px; box-sizing: border-box; font-size: 15px; }
-    textarea { height: 180px; resize: vertical; }
-    
-    .error-msg { color: var(--error); font-size: 12px; margin-top: 4px; display: none; font-weight: 500; }
-    .invalid { border: 2px solid var(--error) !important; background: #fce8e6; }
-
-    .option-row { padding: 12px; border: 1px solid #dadce0; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; cursor: pointer; }
-    .option-row input { width: auto; margin-right: 15px; transform: scale(1.2); }
-    .bracket-detail { font-size: 12px; color: #70757a; display: block; }
-
-    .btn-group { display: flex; gap: 10px; margin-top: 25px; }
-    button { flex: 1; padding: 14px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; }
-    .btn-next { background: var(--primary); color: white; }
-    .btn-prev { background: #f1f3f4; color: #3c4043; }
-    .btn-submit { background: var(--success); color: white; }
-    #status { margin-top: 15px; text-align: center; color: var(--primary); font-weight: 600; }
+    .screen { display: none; opacity: 0; }
+    .active { display: block; opacity: 1; transition: opacity 0.3s; }
+    .invalid { @apply border-2 border-red-600 bg-red-50; }
   </style>
 </head>
-<body>
+<body class="font-sans bg-gray-50 flex justify-center p-5 m-0">
 
-<div class="card">
-  <div class="portal-header">
-    <p class="lu-title">Lucknow University</p>
-    <p class="msc-subtitle">Meritorious Student Council</p>
-    <p class="portal-name">Grievance & Suggestion Portal</p>
+<div class="bg-white w-full max-w-2xl p-8 rounded-lg shadow-xl border-t-4 border-blue-600">
+  <div class="text-center mb-6 border-b-2 border-gray-200 pb-4">
+    <p class="text-yellow-600 font-extrabold text-xl uppercase tracking-wide m-0">Lucknow University</p>
+    <p class="text-gray-600 font-semibold text-lg my-1">Meritorious Student Council</p>
+    <p class="text-blue-600 font-bold text-2xl my-1">Grievance & Suggestion Portal</p>
   </div>
 
   <form id="mscForm">
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 10px; gap: 8px;">
-  <a href="https://www.instagram.com/lu_msc25" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+    <div class="w-full flex justify-center items-center mb-2 gap-2">
+  <a href="https://www.instagram.com/lu_msc25" target="_blank" class="flex items-center no-underline text-inherit">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#E4405F" class="bi bi-instagram" viewBox="0 0 16 16">
       <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
     </svg>
-    <span style="font-size: 20px; margin-left: 5px; font-weight: 600;">Instagram</span>
+    <span class="text-xl ml-1 font-semibold">Instagram</span>
   </a>
 </div>
     <div class="screen active" id="screen_personal">
-      <h2>Student Identification</h2>
-      <div class="disclaimer">🔒 <strong>Strictly Confidential:</strong> Verification details are private and will not be shared with any authority.</div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Student Identification</h2>
+      <div class="bg-blue-50 text-blue-800 p-3 rounded-lg text-sm mb-5 border-l-4 border-blue-600">🔒 <strong>Strictly Confidential:</strong> Verification details are private and will not be shared with any authority.</div>
       
-      <label>Full Name</label>
-      <input type="text" name="studentName" oninput="saveDraft()" placeholder="Enter your full name">
-      <div class="error-msg">Full Name is required.</div>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Full Name</label>
+      <input type="text" name="studentName" oninput="saveDraft()" placeholder="Enter your full name" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <div class="text-red-600 text-xs mt-1 hidden font-medium">Full Name is required.</div>
 
-      <label>Roll Number</label>
-      <input type="text" name="rollNo" oninput="saveDraft()" placeholder="University Roll No">
-      <div class="error-msg">Valid Roll Number is required.</div>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Roll Number</label>
+      <input type="text" name="rollNo" oninput="saveDraft()" placeholder="University Roll No" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <div class="text-red-600 text-xs mt-1 hidden font-medium">Valid Roll Number is required.</div>
 
-      <label>Department/Course</label>
-      <input type="text" name="dept" oninput="saveDraft()" placeholder="Enter your Department/Course">
-      <div class="error-msg">Department/Course is required.</div>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Department/Course</label>
+      <input type="text" name="dept" oninput="saveDraft()" placeholder="Enter your Department/Course" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <div class="text-red-600 text-xs mt-1 hidden font-medium">Department/Course is required.</div>
 
-      <label>Year of Study</label>
-      <input type="number" name="year" onchange="saveDraft()" min="1" placeholder="Year of study(1st,2nd,etc.)">
-      <div class="error-msg">Year of study is required.</div>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Year of Study</label>
+      <input type="number" name="year" onchange="saveDraft()" min="1" placeholder="Year of study(1st,2nd,etc.)" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <div class="text-red-600 text-xs mt-1 hidden font-medium">Year of study is required.</div>
 
-      <label>Date of Birth</label>
-      <input type="date" name="dob" onchange="saveDraft()">
-      <div class="error-msg">DOB is required.</div>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Date of Birth</label>
+      <input type="date" name="dob" onchange="saveDraft()" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <div class="text-red-600 text-xs mt-1 hidden font-medium">DOB is required.</div>
 
-      <div class="btn-group"><button type="button" class="btn-next" onclick="validateScreen('screen_personal')">Continue</button></div>
+      <div class="flex gap-2 mt-6"><button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_personal')">Continue</button></div>
     </div>
 
     <div class="screen" id="screen_menu">
-      <h2>Feedback Categories</h2>
-      <div class="option-row"><input type="checkbox" name="area" value="academic">
-        <div class="option-text">Academic/Course Structure <span class="bracket-detail">(Curriculum, Exams, Faculty)</span></div></div>
-      <div class="option-row"><input type="checkbox" name="area" value="campus">
-        <div class="option-text">Campus Facilities <span class="bracket-detail">(Washrooms, Water, Seating)</span></div></div>
-      <div class="option-row"><input type="checkbox" name="area" value="admin">
-        <div class="option-text">Administrative Facilities <span class="bracket-detail">(Fee, Scholarship, Enrollment)</span></div></div>
-      <div class="option-row"><input type="checkbox" name="area" value="it">
-        <div class="option-text">IT / Technical Issues <span class="bracket-detail">(Labs, Wi-Fi, Portal)</span></div></div>
-      <div class="option-row"><input type="checkbox" name="area" value="hostel">
-        <div class="option-text">Hostel Residence <span class="bracket-detail">(Food, Hygiene, Maintenance)</span></div></div>
-      <div class="option-row"><input type="checkbox" name="area" value="other">
-        <div class="option-text">Other Issues <span class="bracket-detail">(Topic not listed above)</span></div></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Feedback Categories</h2>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="area" value="academic" class="w-auto mr-4 scale-125">
+        <div class="option-text">Academic/Course Structure <span class="text-xs text-gray-500 block">(Curriculum, Exams, Faculty)</span></div>
+      </div>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="area" value="campus" class="w-auto mr-4 scale-125">
+        <div class="option-text">Campus Facilities <span class="text-xs text-gray-500 block">(Washrooms, Water, Seating)</span></div>
+      </div>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="area" value="admin" class="w-auto mr-4 scale-125">
+        <div class="option-text">Administrative Facilities <span class="text-xs text-gray-500 block">(Fee, Scholarship, Enrollment)</span></div>
+      </div>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="area" value="it" class="w-auto mr-4 scale-125">
+        <div class="option-text">IT / Technical Issues <span class="text-xs text-gray-500 block">(Labs, Wi-Fi, Portal)</span></div>
+      </div>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="area" value="hostel" class="w-auto mr-4 scale-125">
+        <div class="option-text">Hostel Residence <span class="text-xs text-gray-500 block">(Food, Hygiene, Maintenance)</span></div>
+      </div>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="area" value="other" class="w-auto mr-4 scale-125">
+        <div class="option-text">Other Issues <span class="text-xs text-gray-500 block">(Topic not listed above)</span></div>
+      </div>
       
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="preparePath()">Next</button></div>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="preparePath()">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_academic">
-      <h2>Academic Feedback</h2>
-      <label>Problem in Short*</label><input type="text" name="acad_short">
-      <label>Detailed Description*</label><textarea name="acad_long"></textarea>
-      <label>Desired Solution*</label><textarea name="acad_solution"></textarea>
-      <label>Suggestions (Optional)</label><textarea name="acad_suggest"></textarea>
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="validateScreen('screen_academic')">Next</button></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Academic Feedback</h2>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Problem in Short*</label>
+      <input type="text" name="acad_short" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Detailed Description*</label>
+      <textarea name="acad_long" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Desired Solution*</label>
+      <textarea name="acad_solution" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Suggestions (Optional)</label>
+      <textarea name="acad_suggest" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_academic')">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_campus">
-      <h2>Campus Feedback</h2>
-      <label>Problem in Short*</label><input type="text" name="camp_short">
-      <label>Detailed Description*</label><textarea name="camp_long"></textarea>
-      <label>Desired Solution*</label><textarea name="camp_solution"></textarea>
-      <label>Suggestions (Optional)</label><textarea name="camp_suggest"></textarea>
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="validateScreen('screen_campus')">Next</button></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Campus Feedback</h2>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Problem in Short*</label>
+      <input type="text" name="camp_short" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Detailed Description*</label>
+      <textarea name="camp_long" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Desired Solution*</label>
+      <textarea name="camp_solution" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Suggestions (Optional)</label>
+      <textarea name="camp_suggest" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_campus')">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_admin">
-      <h2>Admin Feedback</h2>
-      <label>Problem in Short*</label><input type="text" name="adm_short">
-      <label>Detailed Description*</label><textarea name="adm_long"></textarea>
-      <label>Desired Solution*</label><textarea name="adm_solution"></textarea>
-      <label>Suggestions (Optional)</label><textarea name="adm_suggest"></textarea>
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="validateScreen('screen_admin')">Next</button></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Admin Feedback</h2>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Problem in Short*</label>
+      <input type="text" name="adm_short" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Detailed Description*</label>
+      <textarea name="adm_long" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Desired Solution*</label>
+      <textarea name="adm_solution" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Suggestions (Optional)</label>
+      <textarea name="adm_suggest" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_admin')">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_hostel">
-      <h2>Hostel Feedback</h2>
-      <label>Resident?*</label><select name="is_resident"><option value="Yes">Yes</option><option value="No">No</option></select>
-      <label>Hostel Name (Optional)</label> <input type="text" name="hostel_name"> 
-      <label>Problem in Short*</label><input type="text" name="hos_short">
-      <label>Detailed Description*</label><textarea name="hos_long"></textarea>
-      <label>Desired Solution*</label><textarea name="hos_solution"></textarea>
-      <label>Suggestions (Optional)</label><textarea name="hos_suggest"></textarea>
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="validateScreen('screen_hostel')">Next</button></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Hostel Feedback</h2>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Resident?*</label>
+      <select name="is_resident" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Hostel Name (Optional)</label>
+      <input type="text" name="hostel_name" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Problem in Short*</label>
+      <input type="text" name="hos_short" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Detailed Description*</label>
+      <textarea name="hos_long" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Desired Solution*</label>
+      <textarea name="hos_solution" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Suggestions (Optional)</label>
+      <textarea name="hos_suggest" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_hostel')">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_it">
-      <h2>IT Feedback</h2>
-      <label>Problem in Short*</label><input type="text" name="it_short">
-      <label>Specific Area (Optional)</label><input type="text" name="it_areas">
-      <label>Detailed Description*</label><textarea name="it_long"></textarea>
-      <label>Desired Solution*</label><textarea name="it_solution"></textarea>
-      <label>Suggestions (Optional)</label><textarea name="it_suggest"></textarea>
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="validateScreen('screen_it')">Next</button></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">IT Feedback</h2>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Problem in Short*</label>
+      <input type="text" name="it_short" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Specific Area (Optional)</label>
+      <input type="text" name="it_areas" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Detailed Description*</label>
+      <textarea name="it_long" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Desired Solution*</label>
+      <textarea name="it_solution" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Suggestions (Optional)</label>
+      <textarea name="it_suggest" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_it')">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_other">
-      <h2>Other Concerns</h2>
-      <label>Problem Topic*</label><input type="text" name="oth_topic">
-      <label>Detailed Description*</label><textarea name="oth_long"></textarea>
-      <label>Desired Solution*</label><textarea name="oth_solution"></textarea>
-      <label>Suggestions (Optional)</label><textarea name="oth_suggest"></textarea>
-      <div class="btn-group"><button type="button" class="btn-prev" onclick="goBack()">Back</button><button type="button" class="btn-next" onclick="validateScreen('screen_other')">Next</button></div>
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Other Concerns</h2>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Problem Topic*</label>
+      <input type="text" name="oth_topic" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base">
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Detailed Description*</label>
+      <textarea name="oth_long" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Desired Solution*</label>
+      <textarea name="oth_solution" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <label class="block mt-4 font-semibold text-sm text-gray-600">Suggestions (Optional)</label>
+      <textarea name="oth_suggest" class="w-full p-3 mt-1 border border-gray-300 rounded-md box-border text-base h-48 resize-y"></textarea>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Back</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-blue-600 text-white" onclick="validateScreen('screen_other')">Next</button>
+      </div>
     </div>
 
     <div class="screen" id="screen_final">
-      <h2>Ready to Submit?</h2>
-      <div class="option-row">
-        <input type="checkbox" name="sendCopy"> Send a copy to my verified Gmail
+      <h2 class="text-blue-600 m-0 mb-2 text-2xl">Ready to Submit?</h2>
+      <div class="p-3 border border-gray-300 rounded-lg mb-2 flex items-center cursor-pointer">
+        <input type="checkbox" name="sendCopy" class="w-auto mr-4 scale-125">
+        Send a copy to my verified Gmail
       </div>
-      <div class="btn-group">
-        <button type="button" class="btn-prev" onclick="goBack()">Review</button>
-        <button type="button" class="btn-submit" onclick="submitFinal()">Final Submit</button>
+      <div class="flex gap-2 mt-6">
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-gray-100 text-gray-700" onclick="goBack()">Review</button>
+        <button type="button" class="flex-1 p-4 rounded-md cursor-pointer text-lg font-bold bg-green-600 text-white" onclick="submitFinal()">Final Submit</button>
       </div>
     </div>
   </form>
-  <div id="status"></div>
+  <div id="status" class="mt-4 text-center text-blue-600 font-semibold"></div>
 </div>
 
 <script>

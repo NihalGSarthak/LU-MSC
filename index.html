@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSC | University of Lucknow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .lu-red { background-color: #800000; }
+        .marquee { white-space: nowrap; overflow: hidden; background: #fbbf24; }
+        .marquee span { display: inline-block; padding-left: 100%; animation: marquee 25s linear infinite; }
+        @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+        .member-card:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: #800000; }
+        p.text-gray-500.text-xs.uppercase { text-transform: none; word-break: break-all; white-space: normal; }
+    </style>
+</head>
+<body class="bg-slate-50 font-serif text-gray-900 leading-normal">
+
+    <header class="bg-white border-b-8 border-red-900 shadow-lg">
+        <div class="container mx-auto py-4 px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center space-x-6">
+                <img src="images/lu-logo.png" alt="LU Logo" class="h-24">
+                <div class="border-l-2 border-gray-300 pl-6">
+                    <h1 class="text-3xl font-bold text-red-900 uppercase leading-tight">University of Lucknow</h1>
+                    <h2 class="text-xl font-semibold text-gray-700 uppercase tracking-wide">Meritorious Student Council</h2>
+                    <p class="text-sm text-red-700 font-bold italic tracking-widest">Light and Learning</p>
+                </div>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <a href="https://lumsc.gt.tc" target="_blank" class="bg-red-900 text-white px-6 py-2 rounded shadow-md font-bold hover:bg-black transition border-2 border-yellow-500">Grievance Portal →</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="marquee py-2 font-bold text-sm uppercase shadow-inner border-b border-yellow-600">
+        <span> Welcome to the portal of the Meritorious Student Council. | Updates: MSC Grievance Portal is live at lumsc.gt.tc </span>
+    </div>
+
+    <main class="container mx-auto px-4 py-10">
+        <section class="mb-16 text-center">
+            <h3 class="text-2xl font-bold text-red-900 mb-10 uppercase tracking-widest underline decoration-yellow-500 underline-offset-8">Our Patrons</h3>
+            <div class="flex flex-wrap justify-center gap-16">
+                <div class="w-64 group">
+                    <div class="w-52 h-64 mx-auto bg-gray-200 border-4 border-red-900 shadow-xl mb-4 overflow-hidden group-hover:border-yellow-500 transition">
+                        <img src="images/vc_sir.jpg" alt="Vice Chancellor" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Prof. Jai Prakash Saini</h4>
+                    <p class="text-red-800 font-bold uppercase text-sm">Vice Chancellor</p>
+                </div>
+                <div class="w-64 group">
+                    <div class="w-52 h-64 mx-auto bg-gray-200 border-4 border-red-900 shadow-xl mb-4 overflow-hidden group-hover:border-yellow-500 transition">
+                        <img src="images/dsw_ma'am.jpg" alt="DSW" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Prof. Amita Kanaujia</h4>
+                    <p class="text-red-800 font-bold uppercase text-sm">Dean Student Welfare</p>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12 bg-white p-8 rounded shadow-sm border-t-4 border-red-900 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <img src="images/lu-logo.png" class="h-32">
+            </div>
+            <h3 class="text-2xl font-bold text-red-900 border-b-2 border-yellow-500 mb-6 pb-2 uppercase inline-block">About the Council</h3>
+            <p class="text-gray-700 text-lg leading-relaxed max-w-5xl">
+                The Meritorious Student Council (MSC) serves as the vital bridge between the student body and the University administration. We are dedicated to fostering an environment of excellence through institutional development, Research & Development (R&D) initiatives, and a robust student-centric approach. Our primary objective is to streamline communication and provide an effective grievance redressal system to ensure the welfare of every student at the University of Lucknow.
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h3 class="text-center text-2xl font-bold text-red-900 mb-10 uppercase tracking-wider">Leadership Core</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white border-b-8 border-red-900 p-8 shadow-md member-card text-center">
+                    <div class="w-36 h-36 bg-gray-200 mx-auto rounded-full mb-4 border-4 border-yellow-500 overflow-hidden">
+                        <img src="images/ayushi-nigam.jpeg" alt="President" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Ayushi Nigam</h4>
+                    <p class="text-red-800 font-extrabold uppercase text-sm">President</p>
+                    <p class="text-gray-500 text-xs uppercase">MA Economics</p>
+                    <p class="text-gray-500 text-xs uppercase">7355383938</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:nigamayushi225@gmail.com'>nigamayushi225@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white border-b-8 border-red-900 p-8 shadow-md member-card text-center">
+                    <div class="w-36 h-36 bg-gray-200 mx-auto rounded-full mb-4 border-4 border-yellow-500 overflow-hidden">
+                        <img src="images/shreya-verma.jpeg" alt="Vice-President-1" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Shreya Verma</h4>
+                    <p class="text-red-800 font-extrabold uppercase text-sm">Vice-President-1</p>
+                    <p class="text-gray-500 text-xs uppercase font-semibold">M.Sc., Statistics</p>
+                    <p class="text-gray-500 text-xs uppercase">9555536193</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:shreyaverma2206@gmail.com'>shreyaverma2206@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white border-b-8 border-red-900 p-8 shadow-md member-card text-center">
+                    <div class="w-36 h-36 bg-gray-200 mx-auto rounded-full mb-4 border-4 border-yellow-500 overflow-hidden">
+                        <img src="images/arushi-sharma.jpeg" alt="Vice-President-2" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Arushi Sharma</h4>
+                    <p class="text-red-800 font-extrabold uppercase text-sm">Vice-President-2</p>
+                    <p class="text-gray-500 text-xs uppercase font-semibold">M.Sc., Applied Geology</p>
+                    <p class="text-gray-500 text-xs uppercase">7007703809</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:febaru17@gmail.com'>febaru17@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h3 class="text-center text-2xl font-bold text-red-900 mb-10 uppercase tracking-wider">Council Representatives</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/vanshika-singh-chauhan.jpeg" alt="General Secretary" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Vanshika Singh Chauhan</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">General Secretary</p>
+                    <p class="text-gray-500 text-xs uppercase">M.Sc., PFPT</p>
+                    <p class="text-gray-500 text-xs uppercase">8009681833</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:vanshikasingh345@gmail.com'>vanshikasingh345@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/ila-mishra.jpeg" alt="Joint Secretary-1" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Ila Mishra</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Joint Secretary-1</p>
+                    <p class="text-gray-500 text-xs uppercase">MA, Geography</p>
+                    <p class="text-gray-500 text-xs uppercase">9118752544</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:mishraila03@gmail.com'>mishraila03@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/khusi-tandon.png" alt="Joint Secretary-2" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Khushi Tandon</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Joint Secretary-2</p>
+                    <p class="text-gray-500 text-xs uppercase">MBA, International Business</p>
+                    <p class="text-gray-500 text-xs uppercase">6386255587</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:tandonkhushi23@gmail.com'>tandonkhushi23@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/harsh-singh.jpeg" alt="Arts Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Harsh Singh</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Arts Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">MA, AIH</p>
+                    <p class="text-gray-500 text-xs uppercase">9794685794</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:harshsh0209@gmail.com'>harshsh0209@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/prabhakar-singh.jpeg" alt="Education Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Prabhakar Singh</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Education Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">B.Ed.</p>
+                    <p class="text-gray-500 text-xs uppercase">8081033401</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:singhprabhakar248@gmail.com'>singhprabhakar248@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/nihal-gupta.jpeg" alt="Engineering Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Nihal Gupta</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Engineering Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">B.Tech., CSE(AI)</p>
+                    <p class="text-gray-500 text-xs uppercase">7307200446</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:emailatnihal@gmail.com'>emailatnihal@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/vibha-singh-yadav.PNG" alt="Commerce Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Vibha Singh Yadav</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Commerce Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">M.Com., Applied Economics</p>
+                    <p class="text-gray-500 text-xs uppercase">6391319121</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:vibhasinghyadavlko@gmail.com'>vibhasinghyadavlko@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/indra-dev-mishra.jpeg" alt="Management Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Indra Dev Mishra</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Management Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">BBA, IMS</p>
+                    <p class="text-gray-500 text-xs uppercase">8896747813</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:indradevmishra989@gmail.com'>indradevmishra989@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/samriddhi-saran.jpeg" alt="Science Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Samriddhi Saran</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Science Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">M.Sc., Statistics</p>
+                    <p class="text-gray-500 text-xs uppercase">9151679922</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:samriddhisaran9@gmail.com'>samriddhisaran9@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/swati-verma.jpeg" alt="Science Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Swati Verma</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Science Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">B.Sc., Mathematics</p>
+                    <p class="text-gray-500 text-xs uppercase">9918760197</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:vermaswati7692@gmail.com'>vermaswati7692@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/shruti-awasthi.jpeg" alt="Cultural Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Shruti</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Cultural Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">MPHCM</p>
+                    <p class="text-gray-500 text-xs uppercase">8707294908</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:shrutiawasthi2017@gmail.com'>shrutiawasthi2017@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/soumya-maurya.jpeg" alt="Literary Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Soumya Mourya</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Literary Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">M.Sc., Zoology</p>
+                    <p class="text-gray-500 text-xs uppercase">9305330461</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:soumya.mourya.489711@gmail.com'>soumya.mourya.489711@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/sushmita-bose.jpeg" alt="Media Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Sushmita Bose</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Media Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">M.Sc., Forensic Science</p>
+                    <p class="text-gray-500 text-xs uppercase">6392262296</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:sushmitabose008@gmail.com'>sushmitabose008@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/priya-yadav.jpg.jpeg" alt="Sports Representative" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Priya Devi</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Sports Representative</p>
+                    <p class="text-gray-500 text-xs uppercase">M.P.Ed.</p>
+                    <p class="text-gray-500 text-xs uppercase">6396000715</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:priyayadav17109@gmail.com'>priyayadav17109@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/gunjan-rokho.png" alt="Foreign Students Representative-1" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Gunjon Rokho</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Foreign Students Representative-1</p>
+                    <p class="text-gray-500 text-xs uppercase">MA, Journalism & Mass Communications (Bangladesh)</p>
+                    <p class="text-gray-500 text-xs uppercase">8953212976</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:rokhogunjon@gmail.com'>rokhogunjon@gmail.com</a></p>
+                </div>
+
+                <div class="bg-white p-4 border-2 border-gray-100 rounded shadow-sm text-center member-card transition">
+                    <div class="w-24 h-24 bg-gray-100 mx-auto rounded-full mb-3 overflow-hidden border-2 border-red-800">
+                        <img src="images/dorcas-sambo.PNG" alt="Foreign Students Representative-2" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold text-sm">Dorcas Tembo Sambo</h5>
+                    <p class="text-[10px] text-red-700 font-black uppercase">Foreign Students Representative-2</p>
+                    <p class="text-gray-500 text-xs uppercase">BBA, IMS (Angola)</p>
+                    <p class="text-gray-500 text-xs uppercase">7991810837</p>
+                    <p class="text-gray-500 text-xs uppercase"><a href='mailto:tabitasambo23@gmail.com'>tabitasambo23@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="mt-20 bg-red-900 rounded-2xl p-1 shadow-2xl">
+            <div class="bg-white rounded-xl p-8 text-center border-4 border-dashed border-red-900">
+                <h3 class="text-3xl font-black text-red-900 mb-2">ACCESS GRIEVANCE PORTAL</h3>
+                <p class="text-gray-600 mb-6 font-bold uppercase tracking-tighter">Official Domain: LUMSC.GT.TC</p>
+                <a href="https://lumsc.gt.tc" target="_blank" class="inline-block bg-yellow-500 text-red-900 px-12 py-4 rounded-full font-black text-2xl hover:scale-105 transition shadow-lg">LAUNCH NOW</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="lu-red text-white py-12 border-t-8 border-yellow-500">
+        <div class="container mx-auto text-center px-4">
+            <img src="images/lu-logo.png" class="h-16 mx-auto mb-4 brightness-0 invert">
+            <p class="font-bold text-xl uppercase tracking-widest">Meritorious Student Council</p>
+            <p class="text-sm opacity-80 mt-2">University of Lucknow, Lucknow - 226007</p>
+            <div class="mt-6 pt-6 border-t border-red-800 text-xs opacity-60">
+                Managed by the Meritorious Student Council.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

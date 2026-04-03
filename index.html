@@ -16,15 +16,47 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.25rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .council-grid > * {
+            flex: 1 1 240px;
+            max-width: 280px;
+            min-width: 220px;
+            box-sizing: border-box;
         }
         .council-grid > .bg-white {
-            flex: 1 1 min(260px, 100%);
+            width: 100%;
             max-width: 280px;
+            margin-inline: auto;
         }
         p.text-gray-500.text-xs, .council-grid h5, .council-grid p {
             white-space: normal;
             word-break: break-word;
+        }
+        @media (max-width: 768px) {
+            body { font-size: 14px; overflow-x: hidden; }
+            html { overflow-x: hidden; }
+            .container { padding-left: 0.75rem; padding-right: 0.75rem; max-width: 700px; }
+            .marquee { font-size: 0.75rem; }
+            .member-card { padding: 1rem; }
+            .member-card h4, .member-card h5 { font-size: 1rem; }
+            .member-card p { font-size: 0.75rem; }
+            .bg-white.p-8 { padding: 1rem; }
+            .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+            .council-grid {
+                flex-direction: column;
+                align-items: center;
+                max-width: 100%;
+                padding: 0;
+                margin: 0 auto;
+            }
+            .council-grid > * {
+                flex: 1 1 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
         }
         .council-grid p.text-gray-500.text-xs.uppercase a,
         .council-grid p.text-gray-500.text-xs.uppercase {
@@ -244,7 +276,7 @@
                     <h5 class="font-bold text-sm">Swati Verma</h5>
                     <p class="text-[10px] text-red-700 font-black uppercase">Science Representative</p>
                     <p class="text-gray-500 text-xs uppercase">B.Sc., Mathematics</p>
-                    <p class="text-gray-500 text-xs uppercase">9918760197</p>
+                    <p class="text-gray-500 text-xs uppercase">8423991855</p>
                     <p class="text-gray-500 text-xs uppercase"><a href='mailto:vermaswati7692@gmail.com'>vermaswati7692@gmail.com</a></p>
                 </div>
 
